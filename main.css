@@ -1,3 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* color scheme:
+light blue: #c4e2e2
+olive: #688052
+pink: #fa9584
+orange: #f9ae54
+
+*/
+
 body {
-    background-color: darkcyan;
+    background-color: #c4e2e2;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+}
+
+.button {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+} */
+
+.pets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.animal {
+    border: 2px #688052 solid;
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    background-color: white;
+}
+
+img {
+    width: 280px;
+    padding: 10px;
+}
+
+h2 {
+    padding: 20px 0px;
+    letter-spacing: 1px;
+    background-color: #fa9584;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
+}
+
+p {
+    padding: 10px;
+}
+
+.special-skill {
+    height: 80px;
+}
+
+footer { 
+    padding: 10px 0px;
+    background-color: #f9ae54;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 800;
 }

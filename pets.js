@@ -177,3 +177,34 @@ const pets = [
   }
 
   buildPetCards();
+
+//   document.getElementById("cat-button").addEventListener("click", filterCats);
+
+//   const filterCats = () => {
+//       let cats = pets.filter(pet => pets.type === 'cat');
+
+//       for (let j = 0; j < cats.length; j++) {
+//         domString += `<div class="animal">`
+//         domString +=      `<h2>${cats[j].name}</h2>`
+//         domString +=      `<img src="${cats[j].imageUrl}" alt="pet image">`
+//         domString +=      `<p>${cats[j].color}</p>`
+//         domString +=      `<p class="special-skill">${cats[j].specialSkill}</p>`
+//         domString +=      `<footer>${cats[j].type}</footer>`
+//         domString += `</div>`
+//       }
+//       printToDom('pets', domString)
+//   }
+
+// const filterCats = () => {
+//     let cats = pets.filter(pets.type === 'cat');
+//     console.log(cats);
+// }
+
+let catButton = document.getElementById('cat-button');
+
+catButton.addEventListener('click', filterCats);
+function filterCats(ev){
+    console.log(ev.type, ev.target, ev.currentTarget);
+    let cats = pets.filter()
+
+}

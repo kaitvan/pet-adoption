@@ -70,3 +70,31 @@ footer {
     font-family: 'Work Sans', sans-serif;
     font-weight: 800;
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin: 20px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.cat-button {
+    background-color: #f9ae54;
+}
+
+.dog-button {
+    background-color: #fa9584;
+}
+
+.dino-button {
+    background-color: #688052;
+}

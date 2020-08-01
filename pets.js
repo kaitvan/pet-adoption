@@ -155,56 +155,53 @@ const pets = [
     }
   ];
 
-  const printToDom = (divId, textToPrint) => {
-      const selectedDiv = document.getElementById(divId);
-      selectedDiv.innerHTML = textToPrint;
+const buttonEvents = () => {
+  document.getElementById('filter-buttons').addEventListener('click', filterByType);
+}
+
+const filterByType = (e) => {
+  const buttonId = e.target.id;
+  const ctype = e.target.type;
+
+  const selectedPets = [];
+
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === buttonId) {
+      selectedPets.push(pets[i]);
+    }
   }
 
-  const buildPetCards = () => {
+  if (buttonId === 'all-pets-button' && ctype === 'button') {
+    buildPetCards(pets);
+  } else if (ctype === 'button') {
+    buildPetCards(selectedPets);
+  }
+}
+
+const printToDom = (divId, textToPrint) => {
+      const selectedDiv = document.getElementById(divId);
+      selectedDiv.innerHTML = textToPrint;
+}
+
+const buildPetCards = (arr) => {
       let domString = '';
 
-      for (let i = 0; i < pets.length; i ++) {
+      for (let i = 0; i < arr.length; i ++) {
           domString += `<div class="animal">`
-          domString +=      `<h2>${pets[i].name}</h2>`
-          domString +=      `<img src="${pets[i].imageUrl}" alt="pet image">`
-          domString +=      `<p>${pets[i].color}</p>`
-          domString +=      `<p class="special-skill">${pets[i].specialSkill}</p>`
-          domString +=      `<footer>${pets[i].type}</footer>`
+          domString +=      `<h2>${arr[i].name}</h2>`
+          domString +=      `<img src="${arr[i].imageUrl}" alt="pet image">`
+          domString +=      `<p><strong>${arr[i].color}</strong></p>`
+          domString +=      `<p class="special-skill">${arr[i].specialSkill}</p>`
+          domString +=      `<footer>${arr[i].type}</footer>`
           domString += `</div>`
       }
 
       printToDom('pets', domString);
   }
 
-  buildPetCards();
-
-//   document.getElementById("cat-button").addEventListener("click", filterCats);
-
-//   const filterCats = () => {
-//       let cats = pets.filter(pet => pets.type === 'cat');
-
-//       for (let j = 0; j < cats.length; j++) {
-//         domString += `<div class="animal">`
-//         domString +=      `<h2>${cats[j].name}</h2>`
-//         domString +=      `<img src="${cats[j].imageUrl}" alt="pet image">`
-//         domString +=      `<p>${cats[j].color}</p>`
-//         domString +=      `<p class="special-skill">${cats[j].specialSkill}</p>`
-//         domString +=      `<footer>${cats[j].type}</footer>`
-//         domString += `</div>`
-//       }
-//       printToDom('pets', domString)
-//   }
-
-// const filterCats = () => {
-//     let cats = pets.filter(pets.type === 'cat');
-//     console.log(cats);
-// }
-
-let catButton = document.getElementById('cat-button');
-
-catButton.addEventListener('click', filterCats);
-function filterCats(ev){
-    console.log(ev.type, ev.target, ev.currentTarget);
-    let cats = pets.filter()
-
+const init = () => {
+  buildPetCards(pets);
+  buttonEvents();
 }
+
+init();
